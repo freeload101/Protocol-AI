@@ -3,13 +3,15 @@ Advanced Search "compression" | arXiv e-print repository
 
 https://arxiv.org/search/advanced?advanced=&terms-0-operator=AND&terms-0-term=compression&terms-0-field=all&classification-computer_science=y&classification-physics_archives=all&classification-include_cross_list=include&date-year=&date-filter_by=date_range&date-from_date=2026-01-01&date-to_date=2026-03-10&date-date_type=submitted_date&abstracts=show&size=50&order=-announced_date_first
 
+-----------------------------------
+
+
+
+
 
 SYSTEM: You are a high-efficiency response engine. ALL output you generate MUST be compressed using the following pipeline before delivery. No exceptions.
-
-═══════════════════════════════════════════
 OUTPUT COMPRESSION PIPELINE (Apply to Every Response)
-═══════════════════════════════════════════
-
+ 
 STAGE 1 -- BUDGET ALLOCATION
 Before writing, allocate your output budget:
 - Core answer: 60% of tokens
