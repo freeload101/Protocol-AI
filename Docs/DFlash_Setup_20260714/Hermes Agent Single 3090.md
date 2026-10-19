@@ -143,40 +143,43 @@ Ini, TOML
 [*]
 # Shared Global Defaults
 
-[FAST]
-m = C:\backup\LLM_Server\models\models--peculiar-ragdoll--Tiel-Coder-35B-A3B-GGUF\Tiel-Coder-35B-A3B-UD-Q4_K_S.gguf
+[SEC]
+m = C:\backup\LLM_Server\models\models--peculiar-ragdoll--Cyber-Tiel-Coder-35B-A3B-GGUF-MTP\Cyber-Tiel-Coder-35B-A3B-MTP-UD-Q4_K_S.gguf
 log-file = log.log
 log-colors = off
-ncmoe = 0
-jinja = true
+
+; MTP speculation
+spec-type = draft-mtp
+spec-draft-n-max = 3
+spec-draft-p-min = 0.0
+spec-draft-n-ubatch = 512
+
+; offload
 ngl = all
+ncmoe = 0
 fa = on
 sm = none
-temp = 0.6
-top-k = 40          # Was 20 — slightly wider for agentic diversity
-top-p = 0.95
-min-p = 0.01        # Small floor helps prune junk tokens
-no-context-shift = true
 
-# Repetition control — RESTORE + ADD DRY
-presence-penalty = 1.5          # Restored: general agentic reasoning needs this
-repeat-penalty = 1.05           # Light base penalty on recent tokens
-repeat-last-n = 256             # Window for repeat-penalty
+; batching
+ubatch-size = 1024
+batch-size = 2048
 
-# DRY — catches phrase-level loops (the RIGHT tool for "Actually..." loops)
-#dry-multiplier = 0.8            # Start here; go to 1.0 if loops persist
-#dry-base = 1.75
-#dry-allowed-length = 2          # Sequences > 2 tokens get penalized
-#dry-penalty-last-n = 0          # 0 = full context window
-
+; template + context
+jinja = true
+no-reasoning-preserve = true
+ctx-size = 131072
 parallel = 1
-ub = 1024
-#dry-penalty-last-n = 4096
-c = 200000
-
-# Quantize KV cache to 8-bit to cut KV VRAM usage by 50%
 ctk = q8_0
 ctv = q8_0
+ctkd = q8_0
+ctvd = q8_0
+no-context-shift = true
+
+; sampling
+temp = 0.6
+top-k = 20
+top-p = 0.95
+min-p = 0
 ```
 
 ### 4. Hermes Agent Deployment & Local API Link
