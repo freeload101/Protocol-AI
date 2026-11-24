@@ -11,7 +11,9 @@ CHROME AUTOMATION RULES (CDP)
    - Verify none remain before starting.
 
 3. Persistent profile
-   - Always launch with: --user-data-dir=$HOME/CHROME_PROFILE
+   - Always launch with: --user-data-dir=$HOME/CHROME_PROFILE --remote-allow-origins
+
+╭─ ☤ Hermes ───────────────────────────────────────────────────
 
 4. Launch flags
    - --remote-debugging-port=9222
